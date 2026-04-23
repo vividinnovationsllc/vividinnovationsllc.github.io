@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Mountain Range Distribution partners with brands to expand their presence across online marketplaces while protecting pricing, reputation, and long-term growth.">
   <title>Mountain Range Distribution</title>
-  <section class="section reverse" id="why-brands">
 
   <style>
     html{
@@ -207,6 +206,10 @@
       scroll-margin-top:100px;
     }
 
+    .section.reverse{
+      flex-direction:row-reverse;
+    }
+
     .section img{
       width:50%;
       border-radius:14px;
@@ -233,10 +236,6 @@
       line-height:1.9;
       padding-left:20px;
       font-size:17px;
-    }
-
-    .section.reverse{
-      flex-direction:row-reverse;
     }
 
     .footer{
@@ -311,7 +310,8 @@
         font-size:18px;
       }
 
-      .section{
+      .section,
+      .section.reverse{
         flex-direction:column;
         padding:80px 20px;
       }
@@ -341,13 +341,6 @@
 
       .about p{
         font-size:17px;
-      }
-    }
-
-    @media (max-width: 900px){
-      .section,
-      .section.reverse{
-        flex-direction:column;
       }
     }
   </style>
@@ -408,7 +401,7 @@
     </div>
   </section>
 
-  <section class="section" id="why-brands">
+  <section class="section reverse" id="why-brands">
     <img src="whybrands.png" alt="Why Brands Work With Us">
 
     <div class="section-text">
