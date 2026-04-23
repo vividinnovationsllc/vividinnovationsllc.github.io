@@ -7,425 +7,440 @@
   <title>Mountain Range Distribution</title>
 
   <style>
-    html{ scroll-behavior:smooth; }
+    html { scroll-behavior: smooth; }
 
-    body{
-      margin:0;
-      font-family:Arial, sans-serif;
-      background:#eef4f8;
-      color:#1f2f3d;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #eef4f8;
+      color: #1f2f3d;
     }
 
-    .site-header{
-      position:fixed;
-      top:0;
-      left:0;
-      width:100%;
-      z-index:1000;
-      background:rgba(255,255,255,.88);
-      backdrop-filter:blur(10px);
-      -webkit-backdrop-filter:blur(10px);
-      box-shadow:0 2px 12px rgba(0,0,0,.08);
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(255,255,255,.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 2px 12px rgba(0,0,0,.08);
     }
 
-    .nav-wrap{
-      height:82px;
-      padding:0 18px;
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      box-sizing:border-box;
-      width:100%;
+    .nav-wrap {
+      height: 82px;
+      padding: 0 18px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      box-sizing: border-box;
+      width: 100%;
     }
 
-    .nav-logo{
-      display:flex;
-      align-items:center;
-      height:100%;
-      flex:0 0 auto;
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      flex: 0 0 auto;
     }
 
-    .nav-logo img{
-      width:180px;
-      height:auto;
-      display:block;
+    .nav-logo img {
+      width: 180px;
+      height: auto;
+      display: block;
     }
 
-    .nav-links{
-      display:flex;
-      align-items:flex-end;
-      gap:28px;
-      padding-bottom:16px;
-      flex:0 0 auto;
-      white-space:nowrap;
+    .nav-links {
+      display: flex;
+      align-items: flex-end;
+      gap: 28px;
+      padding-bottom: 16px;
+      flex: 0 0 auto;
+      white-space: nowrap;
     }
 
-    .nav-links a{
-      text-decoration:none;
-      color:#20364a;
-      font-size:15px;
-      font-weight:600;
-      line-height:1;
-      transition:opacity .2s ease;
-      position:relative;
+    .nav-links a {
+      text-decoration: none;
+      color: #20364a;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1;
+      transition: opacity .2s ease;
+      position: relative;
     }
 
-    .nav-links a::after{
-      content:"";
-      position:absolute;
-      left:0;
-      bottom:-4px;
-      width:0%;
-      height:2px;
-      background:#20364a;
-      transition:width .25s ease;
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0%;
+      height: 2px;
+      background: #20364a;
+      transition: width .25s ease;
     }
 
-    .nav-links a:hover::after{ width:100%; }
+    .nav-links a:hover::after { width: 100%; }
 
-    .cta{
-      background:#20364a;
-      color:white !important;
-      padding:10px 18px;
-      border-radius:6px;
-      font-weight:600;
-      transition:all .2s ease;
+    .cta {
+      background: #20364a;
+      color: white !important;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: all .2s ease;
     }
 
-    .cta:hover{
-      background:#1a2f41;
-      transform:translateY(-1px);
+    .cta:hover {
+      background: #1a2f41;
+      transform: translateY(-1px);
     }
 
-    .nav-links a.cta::after{ display:none; }
+    .nav-links a.cta::after { display: none; }
 
-    .hero{
-      position:relative;
-      min-height:100vh;
-      overflow:hidden;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:110px 20px 140px;
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 110px 20px 140px;
     }
 
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background-image:url('mountain2.png');
-      background-size:cover;
-      background-position:center;
-      filter:brightness(1.08) contrast(1.08) saturate(1.05);
-      z-index:0;
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url('mountain2.png');
+      background-size: cover;
+      background-position: center;
+      filter: brightness(1.08) contrast(1.08) saturate(1.05);
+      z-index: 0;
     }
 
-    .overlay{
-      position:absolute;
-      inset:0;
-      background:linear-gradient(
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
         to bottom,
         rgba(0,0,0,.28) 0%,
         rgba(0,0,0,.10) 38%,
         rgba(0,0,0,.06) 68%,
         rgba(255,255,255,.16) 100%
       );
-      z-index:1;
+      z-index: 1;
     }
 
-    .hero-content{
-      position:relative;
-      z-index:2;
-      text-align:center;
-      color:white;
-      max-width:960px;
-      padding:20px;
-      text-shadow:0 2px 14px rgba(0,0,0,.28);
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: white;
+      max-width: 960px;
+      padding: 20px;
+      text-shadow: 0 2px 14px rgba(0,0,0,.28);
     }
 
-    h1{
-      font-size:64px;
-      line-height:1.05;
-      margin:0;
-      font-weight:700;
-      letter-spacing:-1px;
+    h1 {
+      font-size: 64px;
+      line-height: 1.05;
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: -1px;
     }
 
-    .hero-subline{
-      margin-top:22px;
-      font-size:22px;
-      line-height:1.6;
-      max-width:760px;
-      margin-left:auto;
-      margin-right:auto;
-      color:rgba(255,255,255,.92);
+    .hero-subline {
+      margin-top: 22px;
+      font-size: 22px;
+      line-height: 1.6;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+      color: rgba(255,255,255,.92);
     }
 
-    .hero-fade{
-      position:absolute;
-      bottom:0;
-      left:0;
-      width:100%;
-      height:140px;
-      background:linear-gradient(to bottom, rgba(255,255,255,0), #eef4f8);
-      z-index:2;
+    .hero-fade {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 140px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0), #eef4f8);
+      z-index: 2;
     }
 
-    .about{
-      background:white;
-      padding:100px 20px 60px;
-      scroll-margin-top:100px;
+    .about {
+      background: white;
+      padding: 100px 20px 60px;
+      scroll-margin-top: 100px;
     }
 
-    .about-inner{
-      max-width:1000px;
-      margin:auto;
-      text-align:center;
+    .about-inner {
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
     }
 
     .about h2,
-    .section h2{
-      font-size:36px;
-      color:#20364a;
-      margin:0 0 25px;
+    .section h2,
+    .approach-heading h2 {
+      font-size: 36px;
+      color: #20364a;
+      margin: 0 0 25px;
     }
 
     .about h2::after,
-    .section h2::after{
-      content:"";
-      display:block;
-      width:60px;
-      height:3px;
-      background:#20364a;
-      margin:14px auto 0;
+    .section h2::after,
+    .approach-heading h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #20364a;
+      margin: 14px auto 0;
     }
 
-    .about p{
-      font-size:20px;
-      line-height:1.8;
-      color:#455a6d;
-      margin:0 0 20px;
+    .about p {
+      font-size: 20px;
+      line-height: 1.8;
+      color: #455a6d;
+      margin: 0 0 20px;
     }
 
-    .trust-bar{
-      background:white;
-      padding:0 20px 100px;
+    .trust-bar {
+      background: white;
+      padding: 0 20px 100px;
     }
 
-    .trust-inner{
-      max-width:1100px;
-      margin:auto;
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:20px;
+    .trust-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
     }
 
-    .trust-item{
-      background:#f7fafc;
-      border:1px solid rgba(32,54,74,.08);
-      border-radius:14px;
-      padding:22px 20px;
-      text-align:center;
-      color:#20364a;
-      font-size:16px;
-      font-weight:600;
-      box-shadow:0 8px 18px rgba(0,0,0,.04);
+    .trust-item {
+      background: #f7fafc;
+      border: 1px solid rgba(32,54,74,.08);
+      border-radius: 14px;
+      padding: 22px 20px;
+      text-align: center;
+      color: #20364a;
+      font-size: 16px;
+      font-weight: 600;
+      box-shadow: 0 8px 18px rgba(0,0,0,.04);
     }
 
-    .section{
-      max-width:1350px;
-      margin:auto;
-      padding:120px 40px;
-      display:flex;
-      gap:80px;
-      align-items:center;
+    .section {
+      max-width: 1350px;
+      margin: auto;
+      padding: 120px 40px;
+      display: flex;
+      gap: 80px;
+      align-items: center;
+      scroll-margin-top: 100px;
     }
 
-    .approach-section{
-  max-width:1350px;
-  margin:auto;
-  padding:120px 40px;
-  scroll-margin-top:100px;
-}
-
-.approach-wrapper{
-  width:100%;
-}
-
-.approach-heading{
-  width:100%;
-  margin-bottom:30px;
-}
-
-.approach-heading h2::after{
-  margin:14px 0 0;
-}
-
-.approach-row{
-  display:flex;
-  align-items:center;
-  gap:60px;
-  margin-bottom:40px;
-}
-
-.approach-row img{
-  width:52%;
-  border-radius:14px;
-  box-shadow:0 12px 30px rgba(0,0,0,.12);
-}
-
-.approach-grid.two-up{
-  width:48%;
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:24px;
-}
-
-.approach-item{
-  background:white;
-  border:1px solid rgba(32,54,74,.08);
-  border-radius:14px;
-  padding:24px;
-  box-shadow:0 10px 22px rgba(0,0,0,.05);
-}
-
-.approach-item h3{
-  margin:0 0 10px;
-  font-size:22px;
-  color:#20364a;
-}
-
-.approach-item p{
-  margin:0;
-  font-size:16px;
-  line-height:1.7;
-  color:#455a6d;
-}
-
-@media (max-width: 900px){
-  .approach-section{
-    padding:80px 20px;
-  }
-
-  .approach-row,
-  .approach-row.reverse-on-desktop{
-    flex-direction:column;
-    gap:24px;
-  }
-
-  .approach-row img,
-  .approach-grid.two-up{
-    width:100%;
-  }
-
-  .approach-grid.two-up{
-    grid-template-columns:1fr;
-  }
-}
-
-    .footer{
-      background:#243949;
-      color:white;
-      padding:80px 20px;
-      scroll-margin-top:100px;
+    .section img {
+      width: 55%;
+      border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.12);
     }
 
-    .footer-inner{
-      max-width:1100px;
-      margin:auto;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:40px;
+    .section-text { width: 45%; }
+
+    .section h2::after { margin: 14px 0 0; }
+
+    .section p {
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 18px;
+      color: #455a6d;
     }
 
-    .footer-left img{
-      width:340px;
-      filter:brightness(1.22);
+    .approach-section {
+      max-width: 1350px;
+      margin: auto;
+      padding: 120px 40px;
+      scroll-margin-top: 100px;
     }
 
-    .footer-right{ text-align:right; }
+    .approach-wrapper { width: 100%; }
 
-    .footer-right h3{
-      margin:0 0 16px;
-      font-size:30px;
+    .approach-heading {
+      width: 100%;
+      margin-bottom: 30px;
     }
 
-    .footer-right p{
-      margin:0;
-      font-size:18px;
-      line-height:1.8;
+    .approach-heading h2::after { margin: 14px 0 0; }
+
+    .approach-row {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      margin-bottom: 40px;
     }
 
-    .footer-note{
-      margin-top:14px !important;
-      font-size:15px !important;
-      color:rgba(255,255,255,.82);
+    .approach-row img {
+      width: 56%;
+      border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.12);
     }
 
-    @media (max-width: 1100px){
-      .nav-logo img{ width:165px; }
-      .nav-links{ gap:18px; }
-      .nav-links a{ font-size:14px; }
-      .footer-left img{ width:290px; }
+    .approach-grid.two-up {
+      width: 44%;
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 24px;
     }
 
-    @media (max-width: 900px){
-      .nav-wrap{
-        height:auto;
-        padding:12px 16px;
-        flex-direction:column;
-        align-items:flex-start;
+    .approach-item {
+      background: white;
+      border: 1px solid rgba(32,54,74,.08);
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 10px 22px rgba(0,0,0,.05);
+    }
+
+    .approach-item h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      color: #20364a;
+    }
+
+    .approach-item p {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #455a6d;
+    }
+
+    .footer {
+      background: #243949;
+      color: white;
+      padding: 80px 20px;
+      scroll-margin-top: 100px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .footer-left img {
+      width: 340px;
+      filter: brightness(1.22);
+    }
+
+    .footer-right { text-align: right; }
+
+    .footer-right h3 {
+      margin: 0 0 16px;
+      font-size: 30px;
+    }
+
+    .footer-right p {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .footer-note {
+      margin-top: 14px !important;
+      font-size: 15px !important;
+      color: rgba(255,255,255,.82);
+    }
+
+    @media (max-width: 1100px) {
+      .nav-logo img { width: 165px; }
+      .nav-links { gap: 18px; }
+      .nav-links a { font-size: 14px; }
+      .footer-left img { width: 290px; }
+      .section {
+        max-width: 1200px;
+        gap: 50px;
+        padding: 100px 28px;
+      }
+      .approach-section { padding: 100px 28px; }
+    }
+
+    @media (max-width: 900px) {
+      .nav-wrap {
+        height: auto;
+        padding: 12px 16px;
+        flex-direction: column;
+        align-items: flex-start;
       }
 
-      .nav-logo{
-        height:auto;
-        margin-bottom:8px;
+      .nav-logo {
+        height: auto;
+        margin-bottom: 8px;
       }
 
-      .nav-links{
-        gap:16px;
-        padding-bottom:0;
-        flex-wrap:wrap;
+      .nav-links {
+        gap: 16px;
+        padding-bottom: 0;
+        flex-wrap: wrap;
       }
 
-      h1{ font-size:44px; }
-      .hero-subline{ font-size:19px; }
+      h1 { font-size: 44px; }
+      .hero-subline { font-size: 19px; }
 
       .about h2,
-      .section h2{ font-size:30px; }
+      .section h2,
+      .approach-heading h2 { font-size: 30px; }
 
-      .about p{ font-size:18px; }
+      .about p { font-size: 18px; }
 
-      .trust-inner{ grid-template-columns:1fr; }
+      .trust-inner { grid-template-columns: 1fr; }
 
-      .section,
-      .section.reverse{
-        flex-direction:column;
-        padding:80px 20px;
+      .section {
+        flex-direction: column;
+        padding: 80px 20px;
+        gap: 28px;
       }
 
       .section img,
-      .section-text{ width:100%; }
+      .section-text { width: 100%; }
 
-      .approach-grid{ grid-template-columns:1fr; }
+      .approach-section { padding: 80px 20px; }
 
-      .footer-inner{
-        flex-direction:column;
-        text-align:center;
+      .approach-row,
+      .approach-row.reverse-on-desktop {
+        flex-direction: column;
+        gap: 24px;
       }
 
-      .footer-right{ text-align:center; }
-      .footer-left img{ width:250px; }
+      .approach-row img,
+      .approach-grid.two-up {
+        width: 100%;
+      }
+
+      .approach-grid.two-up { grid-template-columns: 1fr; }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-right { text-align: center; }
+      .footer-left img { width: 250px; }
     }
 
-    @media (max-width: 600px){
-      .nav-logo img{ width:150px; }
-      h1{ font-size:36px; }
-      .hero-subline{ font-size:17px; }
-      .nav-links a{ font-size:13px; }
-      .about{ padding:80px 20px 50px; }
-      .about p{ font-size:17px; }
+    @media (max-width: 600px) {
+      .nav-logo img { width: 150px; }
+      h1 { font-size: 36px; }
+      .hero-subline { font-size: 17px; }
+      .nav-links a { font-size: 13px; }
+      .about { padding: 80px 20px 50px; }
+      .about p { font-size: 17px; }
     }
   </style>
 </head>
@@ -449,12 +464,10 @@
 
   <section class="hero" id="top">
     <div class="overlay"></div>
-
     <div class="hero-content">
       <h1>Helping brands reach new heights</h1>
       <p class="hero-subline">Strategic marketplace distribution for growing brands.</p>
     </div>
-
     <div class="hero-fade"></div>
   </section>
 
@@ -465,7 +478,7 @@
         Mountain Range Distribution partners with brands to expand their presence across leading online marketplaces while protecting pricing, reputation, and long-term growth.
       </p>
       <p>
-        Today’s eCommerce landscape is constantly evolving. Some brands are actively pursuing marketplace expansion, while others are just beginning to explore online channels or discovering their products appearing organically across digital marketplaces.
+        Today's eCommerce landscape is constantly evolving. Some brands are actively pursuing marketplace expansion, while others are just beginning to explore online channels or discovering their products appearing organically across digital marketplaces.
       </p>
       <p>
         Our team works closely with brands to understand their goals and develop thoughtful marketplace strategies that align with their long-term brand vision.
@@ -494,19 +507,17 @@
         Our focus is on helping brands build a more controlled and professional marketplace presence by improving product representation, supporting pricing integrity, and expanding online distribution in a thoughtful and sustainable way.
       </p>
     </div>
-
     <img src="experience.png" alt="Marketplace Expertise">
   </section>
 
-  <section class="section approach-section" id="our-approach">
+  <section class="approach-section" id="our-approach">
     <div class="approach-wrapper">
-      <div class="section-text approach-heading">
+      <div class="approach-heading">
         <h2>Our Approach</h2>
       </div>
-  
+
       <div class="approach-row">
         <img src="whybrands.png" alt="Our Approach">
-  
         <div class="approach-grid two-up">
           <div class="approach-item">
             <h3>Responsible Marketplace Expansion</h3>
@@ -514,7 +525,7 @@
               We work with brands to expand their presence across online marketplaces in a controlled and thoughtful way, ensuring growth happens without compromising brand standards.
             </p>
           </div>
-  
+
           <div class="approach-item">
             <h3>Pricing Integrity</h3>
             <p>
@@ -523,7 +534,7 @@
           </div>
         </div>
       </div>
-  
+
       <div class="approach-row reverse-on-desktop">
         <div class="approach-grid two-up">
           <div class="approach-item">
@@ -532,7 +543,7 @@
               Product listings, imagery, and content shape how customers perceive a brand online. We focus on presenting products professionally and consistently across marketplaces.
             </p>
           </div>
-  
+
           <div class="approach-item">
             <h3>Long-Term Partnerships</h3>
             <p>
@@ -540,7 +551,6 @@
             </p>
           </div>
         </div>
-  
         <img src="whatwedo.png" alt="Our Approach support image">
       </div>
     </div>
@@ -551,7 +561,6 @@
       <div class="footer-left">
         <img src="logo.png" alt="Mountain Range Distribution logo">
       </div>
-
       <div class="footer-right">
         <h3>Partner With Us</h3>
         <p>
