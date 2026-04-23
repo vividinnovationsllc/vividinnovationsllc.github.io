@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" 
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Mountain Range Distribution partners with brands to expand their presence across online marketplaces while protecting pricing, reputation, and long-term growth.">
   <title>Mountain Range Distribution</title>
 
   <style>
-    html{
-      scroll-behavior:smooth;
-    }
+    html{ scroll-behavior:smooth; }
 
     body{
       margin:0;
@@ -83,9 +81,7 @@
       transition:width .25s ease;
     }
 
-    .nav-links a:hover::after{
-      width:100%;
-    }
+    .nav-links a:hover::after{ width:100%; }
 
     .cta{
       background:#20364a;
@@ -101,9 +97,7 @@
       transform:translateY(-1px);
     }
 
-    .nav-links a.cta::after{
-      display:none;
-    }
+    .nav-links a.cta::after{ display:none; }
 
     .hero{
       position:relative;
@@ -157,23 +151,29 @@
       letter-spacing:-1px;
     }
 
+    .hero-subline{
+      margin-top:22px;
+      font-size:22px;
+      line-height:1.6;
+      max-width:760px;
+      margin-left:auto;
+      margin-right:auto;
+      color:rgba(255,255,255,.92);
+    }
+
     .hero-fade{
       position:absolute;
       bottom:0;
       left:0;
       width:100%;
       height:140px;
-      background:linear-gradient(
-        to bottom,
-        rgba(255,255,255,0),
-        #eef4f8
-      );
+      background:linear-gradient(to bottom, rgba(255,255,255,0), #eef4f8);
       z-index:2;
     }
 
     .about{
       background:white;
-      padding:100px 20px;
+      padding:100px 20px 60px;
       scroll-margin-top:100px;
     }
 
@@ -183,17 +183,53 @@
       text-align:center;
     }
 
-    .about h2{
-      font-size:34px;
+    .about h2,
+    .section h2{
+      font-size:36px;
       color:#20364a;
       margin:0 0 25px;
+    }
+
+    .about h2::after,
+    .section h2::after{
+      content:"";
+      display:block;
+      width:60px;
+      height:3px;
+      background:#20364a;
+      margin:14px auto 0;
     }
 
     .about p{
       font-size:20px;
       line-height:1.8;
       color:#455a6d;
-      margin:0;
+      margin:0 0 20px;
+    }
+
+    .trust-bar{
+      background:white;
+      padding:0 20px 100px;
+    }
+
+    .trust-inner{
+      max-width:1100px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .trust-item{
+      background:#f7fafc;
+      border:1px solid rgba(32,54,74,.08);
+      border-radius:14px;
+      padding:22px 20px;
+      text-align:center;
+      color:#20364a;
+      font-size:16px;
+      font-weight:600;
+      box-shadow:0 8px 18px rgba(0,0,0,.04);
     }
 
     .section{
@@ -206,9 +242,7 @@
       scroll-margin-top:100px;
     }
 
-    .section.reverse{
-      flex-direction:row-reverse;
-    }
+    .section.reverse{ flex-direction:row-reverse; }
 
     .section img{
       width:50%;
@@ -216,99 +250,89 @@
       box-shadow:0 12px 30px rgba(0,0,0,.12);
     }
 
-    .section-text{
-      width:50%;
-    }
+    .section-text{ width:50%; }
 
-    .section h2{
-      color:#20364a;
-      margin:0 0 20px;
-      font-size:36px;
-    }
+    .section h2::after{ margin:14px 0 0; }
 
     .section p{
       font-size:18px;
-      line-height:1.7;
-      margin-bottom:18px;
-    }
-
-    .section ul{
-      line-height:1.9;
-      padding-left:20px;
-      font-size:17px;
-    }
-
-    .expertise{
-      background:#f7fafc;
-      padding:110px 20px;
-    }
-    
-    .expertise-inner{
-      max-width:900px;
-      margin:auto;
-      text-align:center;
-    }
-    
-    .expertise h2{
-      font-size:36px;
-      color:#20364a;
-      margin-bottom:25px;
-    }
-    
-    .expertise p{
-      font-size:19px;
       line-height:1.8;
+      margin-bottom:18px;
       color:#455a6d;
-      margin-bottom:25px;
     }
 
-    .approach{
-      background:white;
-      padding:110px 20px;
-    }
-    
-    .approach-inner{
-      max-width:1100px;
-      margin:auto;
-      text-align:center;
-    }
-    
-    .approach h2{
-      font-size:36px;
-      color:#20364a;
-      margin-bottom:60px;
-    }
-    
     .approach-grid{
       display:grid;
       grid-template-columns:repeat(2,1fr);
-      gap:50px;
+      gap:24px;
+      margin-top:10px;
     }
-    
+
+    .approach-item{
+      background:white;
+      border:1px solid rgba(32,54,74,.08);
+      border-radius:14px;
+      padding:24px;
+      box-shadow:0 10px 22px rgba(0,0,0,.05);
+    }
+
     .approach-item h3{
+      margin:0 0 10px;
       font-size:22px;
-      margin-bottom:12px;
       color:#20364a;
     }
-    
+
     .approach-item p{
-      font-size:17px;
+      margin:0;
+      font-size:16px;
       line-height:1.7;
-      color:#455a6d;
+    }
+
+    .footer{
+      background:#243949;
+      color:white;
+      padding:80px 20px;
+      scroll-margin-top:100px;
+    }
+
+    .footer-inner{
+      max-width:1100px;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:40px;
+    }
+
+    .footer-left img{
+      width:340px;
+      filter:brightness(1.22);
+    }
+
+    .footer-right{ text-align:right; }
+
+    .footer-right h3{
+      margin:0 0 16px;
+      font-size:30px;
+    }
+
+    .footer-right p{
+      margin:0;
+      font-size:18px;
+      line-height:1.8;
+    }
+
+    .footer-note{
+      margin-top:14px !important;
+      font-size:15px !important;
+      color:rgba(255,255,255,.82);
     }
 
     @media (max-width: 1100px){
-      .nav-logo img{
-        width:165px;
-      }
-
-      .nav-links{
-        gap:18px;
-      }
-
-      .nav-links a{
-        font-size:14px;
-      }
+      .nav-logo img{ width:165px; }
+      .nav-links{ gap:18px; }
+      .nav-links a{ font-size:14px; }
+      .footer-left img{ width:290px; }
     }
 
     @media (max-width: 900px){
@@ -330,17 +354,15 @@
         flex-wrap:wrap;
       }
 
-      h1{
-        font-size:44px;
-      }
+      h1{ font-size:44px; }
+      .hero-subline{ font-size:19px; }
 
-      .about h2{
-        font-size:30px;
-      }
+      .about h2,
+      .section h2{ font-size:30px; }
 
-      .about p{
-        font-size:18px;
-      }
+      .about p{ font-size:18px; }
+
+      .trust-inner{ grid-template-columns:1fr; }
 
       .section,
       .section.reverse{
@@ -349,73 +371,27 @@
       }
 
       .section img,
-      .section-text{
-        width:100%;
+      .section-text{ width:100%; }
+
+      .approach-grid{ grid-template-columns:1fr; }
+
+      .footer-inner{
+        flex-direction:column;
+        text-align:center;
       }
+
+      .footer-right{ text-align:center; }
+      .footer-left img{ width:250px; }
     }
 
     @media (max-width: 600px){
-      .nav-logo img{
-        width:150px;
-      }
-
-      h1{
-        font-size:36px;
-      }
-
-      .nav-links a{
-        font-size:13px;
-      }
-
-      .about{
-        padding:80px 20px;
-      }
-
-      .about p{
-        font-size:17px;
-      }
+      .nav-logo img{ width:150px; }
+      h1{ font-size:36px; }
+      .hero-subline{ font-size:17px; }
+      .nav-links a{ font-size:13px; }
+      .about{ padding:80px 20px 50px; }
+      .about p{ font-size:17px; }
     }
-
-    @media (max-width:900px){
-      .approach-grid{
-        grid-template-columns:1fr;
-      }
-    }
-
-    .footer{
-        background:#243949;
-        color:white;
-        padding:40px 20px;
-      }
-      
-      .footer-inner{
-        max-width:1100px;
-        margin:auto;
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        gap:40px;
-      }
-      
-      .footer-left img{
-        width:420px;
-        filter:brightness(1.25);
-      }
-      
-      .footer-right{
-        text-align:right;
-      }
-      
-      .footer-right h3{
-        margin:0 0 16px;
-        font-size:30px;
-      }
-      
-      .footer-right p{
-        margin:0;
-        font-size:18px;
-        line-height:1.8;
-      }
   </style>
 </head>
 
@@ -428,9 +404,9 @@
       </a>
 
       <nav class="nav-links">
-        <a href="#what-we-do">What We Do</a>
-        <a href="#why-brands">Why Brands Work With Us</a>
-        <a href="#our-experience">Our Experience</a>
+        <a href="#about">About</a>
+        <a href="#marketplace-expertise">Marketplace Expertise</a>
+        <a href="#our-approach">Our Approach</a>
         <a href="#partner-with-us" class="cta">Partner With Us</a>
       </nav>
     </div>
@@ -441,6 +417,7 @@
 
     <div class="hero-content">
       <h1>Helping brands reach new heights</h1>
+      <p class="hero-subline">Strategic marketplace distribution for growing brands.</p>
     </div>
 
     <div class="hero-fade"></div>
@@ -450,153 +427,97 @@
     <div class="about-inner">
       <h2>About Mountain Range Distribution</h2>
       <p>
-      Mountain Range Distribution partners with brands to expand their presence across leading online marketplaces while protecting pricing, reputation, and long-term growth.
+        Mountain Range Distribution partners with brands to expand their presence across leading online marketplaces while protecting pricing, reputation, and long-term growth.
       </p>
-      
       <p>
-      Today’s eCommerce landscape is constantly evolving. Some brands are actively pursuing marketplace expansion, while others are just beginning to explore online channels or discovering their products appearing organically across digital marketplaces.
+        Today’s eCommerce landscape is constantly evolving. Some brands are actively pursuing marketplace expansion, while others are just beginning to explore online channels or discovering their products appearing organically across digital marketplaces.
       </p>
-      
       <p>
-      Our team works closely with brands to understand their goals and develop thoughtful marketplace strategies that align with their long-term brand vision.
+        Our team works closely with brands to understand their goals and develop thoughtful marketplace strategies that align with their long-term brand vision.
       </p>
     </div>
-    
-    <section class="expertise">
-
-  <div class="expertise-inner">
-
-      <h2>Marketplace Expertise</h2>
-  
-      <p>
-      Online marketplaces provide powerful opportunities for brands to reach new customers, but they also introduce new challenges. Our team understands the complexities of platforms such as Amazon and other major marketplaces, including the differences between first-party (1P) and third-party (3P) strategies and how brands can expand responsibly within these ecosystems.
-      </p>
-      
-      <p>
-      Some brands intentionally pursue marketplace expansion, while others discover their products appearing organically through independent sellers or distribution channels. We understand these dynamics and work closely with brands to navigate them strategically.
-      </p>
-      
-      <p>
-      Our focus is on helping brands build a more controlled and professional marketplace presence by improving product representation, supporting pricing integrity, and expanding online distribution in a thoughtful and sustainable way.
-      </p>
-  
-    </div>
-  
   </section>
 
-    <section class="approach">
+  <section class="trust-bar" aria-label="Brand trust highlights">
+    <div class="trust-inner">
+      <div class="trust-item">Brand-Focused Marketplace Strategy</div>
+      <div class="trust-item">Pricing Integrity &amp; Controlled Growth</div>
+      <div class="trust-item">Professional Representation Across Marketplaces</div>
+    </div>
+  </section>
 
-  <div class="approach-inner">
+  <section class="section" id="marketplace-expertise">
+    <div class="section-text">
+      <h2>Marketplace Expertise</h2>
+      <p>
+        Online marketplaces provide powerful opportunities for brands to reach new customers, but they also introduce new challenges. Our team understands the complexities of platforms such as Amazon and other major marketplaces, including the differences between first-party (1P) and third-party (3P) strategies and how brands can expand responsibly within these ecosystems.
+      </p>
+      <p>
+        Some brands intentionally pursue marketplace expansion, while others discover their products appearing organically through independent sellers or distribution channels. We understand these dynamics and work closely with brands to navigate them strategically.
+      </p>
+      <p>
+        Our focus is on helping brands build a more controlled and professional marketplace presence by improving product representation, supporting pricing integrity, and expanding online distribution in a thoughtful and sustainable way.
+      </p>
+    </div>
 
+    <img src="experience.png" alt="Marketplace Expertise">
+  </section>
+
+  <section class="section reverse" id="our-approach">
+    <div class="section-text">
       <h2>Our Approach</h2>
-  
+
       <div class="approach-grid">
-  
         <div class="approach-item">
           <h3>Responsible Marketplace Expansion</h3>
           <p>
             We work with brands to expand their presence across online marketplaces in a controlled and thoughtful way, ensuring growth happens without compromising brand standards.
           </p>
         </div>
-  
+
         <div class="approach-item">
           <h3>Pricing Integrity</h3>
           <p>
             Protecting pricing structure is critical to long-term brand health. We support brands in maintaining consistent pricing and discouraging destructive marketplace price competition.
           </p>
         </div>
-  
+
         <div class="approach-item">
           <h3>Professional Brand Representation</h3>
           <p>
             Product listings, imagery, and content shape how customers perceive a brand online. We focus on presenting products professionally and consistently across marketplaces.
           </p>
         </div>
-  
+
         <div class="approach-item">
           <h3>Long-Term Partnerships</h3>
           <p>
             Our goal is to build long-term relationships with brands by acting as a responsible marketplace partner focused on sustainable growth rather than short-term sales.
           </p>
         </div>
-  
       </div>
-  
     </div>
-  
-  </section>
 
-</section>
-  </section>
-
-  <section class="section" id="what-we-do">
-    <img src="whatwedo.png" alt="What We Do">
-
-    <div class="section-text">
-      <h2>What We Do</h2>
-
-      <p>
-        Mountain Range Distribution partners with brands to responsibly expand their presence across online marketplaces.
-      </p>
-
-      <ul>
-        <li>Marketplace distribution and fulfillment</li>
-        <li>Listing optimization and product improvements</li>
-        <li>Pricing and brand protection support</li>
-        <li>Strategic growth across major e-commerce platforms</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="section reverse" id="why-brands">
-    <img src="whybrands.png" alt="Why Brands Work With Us">
-
-    <div class="section-text">
-      <h2>Why Brands Work With Us</h2>
-
-      <ul>
-        <li>Professional and consistent brand representation</li>
-        <li>Deep understanding of marketplace dynamics</li>
-        <li>Controlled distribution and pricing discipline</li>
-        <li>Long-term brand partnerships</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="section" id="our-experience">
-    <img src="experience.png" alt="Our Experience">
-
-    <div class="section-text">
-      <h2>Our Experience</h2>
-
-      <ul>
-        <li>Brand-first marketplace strategy</li>
-        <li>Listing optimization and advertising</li>
-        <li>Responsible marketplace distribution</li>
-        <li>Brand growth through e-commerce</li>
-      </ul>
-    </div>
+    <img src="whybrands.png" alt="Our Approach">
   </section>
 
   <footer class="footer" id="partner-with-us">
-
     <div class="footer-inner">
-  
       <div class="footer-left">
         <img src="logo.png" alt="Mountain Range Distribution logo">
       </div>
-  
+
       <div class="footer-right">
         <h3>Partner With Us</h3>
-  
         <p>
           Partnerships@MountainRangeSupply.com<br>
           (720) 340-9844
         </p>
+        <p class="footer-note">
+          We welcome conversations with brands exploring thoughtful marketplace expansion.
+        </p>
       </div>
-  
     </div>
-  
   </footer>
 
 </body>
