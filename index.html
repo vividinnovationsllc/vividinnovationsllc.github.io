@@ -178,7 +178,7 @@
     }
 
     .about-inner{
-      max-width:900px;
+      max-width:1000px;
       margin:auto;
       text-align:center;
     }
@@ -233,13 +233,12 @@
     }
 
     .section{
-      max-width:1100px;
+      max-width:1350px;
       margin:auto;
-      padding:110px 20px;
+      padding:120px 40px;
       display:flex;
-      gap:50px;
+      gap:80px;
       align-items:center;
-      scroll-margin-top:100px;
     }
 
     .section.reverse{ flex-direction:row-reverse; }
@@ -250,7 +249,15 @@
       box-shadow:0 12px 30px rgba(0,0,0,.12);
     }
 
-    .section-text{ width:50%; }
+    .section-text{ width:45%; }
+
+    .section.reverse img{
+      width:60%;
+    }
+    
+    .section.reverse .section-text{
+      width:40%;
+    }
 
     .section h2::after{ margin:14px 0 0; }
 
